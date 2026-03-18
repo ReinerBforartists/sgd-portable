@@ -14,7 +14,7 @@ No Python or system-wide installation required — everything runs from this fol
 
 ## 📦 Installation Size
 
-| Variant | Installed (after `install.bat`) |
+| Variant | Installed (after `start.bat`) |
 |---------|---------------------------------|
 | CPU     |    **~2 GB**                    |
 | CUDA    |    **~6 GB**                    |
@@ -28,7 +28,7 @@ No Python or system-wide installation required — everything runs from this fol
 | Feature | Details |
 |---------|---------|
 | 📦 Portable | All-in-one folder: embedded Python 3.12.9, all dependencies pre-installed |
-| 🖥️ No setup | Double-click `install.bat` → wait → launch. No admin rights needed. |
+| 🖥️ No setup | Double-click `start.bat` → wait → launch. No admin rights needed. |
 | 🚀 GPU support (CUDA) | Uses NVIDIA CUDA cu12.4 automatically when available; falls back to CPU otherwise |
 | 🧠 Model | [MAEST](https://huggingface.co/mtg-upf/discogs-maest-10s-fs-129e): genre & subgenre classification (over 400 styles) |
 | 🌐 Web UI | Gradio-based — dark/light theme, file upload, charts, tag cloud |
@@ -66,7 +66,7 @@ Full details in `THIRD_PARTY_LICENSES.md`.
 
 2. Extract the folder.
 
-3. Double-click `install.bat`.  
+3. Double-click `start.bat`.  
    → Downloads Python, installs ~1.5–6 GB of packages (depending on variant).  
    → Optionally downloads MAEST model (~350 MB).
 
