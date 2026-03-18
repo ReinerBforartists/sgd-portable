@@ -31,7 +31,7 @@ No Python or system-wide installation required — everything runs from this fol
 | 📦 Portable | All-in-one folder: embedded Python 3.12.9, all dependencies pre-installed |
 | 🖥️ No setup | Double-click `install.bat` → wait → launch. No admin rights needed. |
 | 🚀 GPU support (CUDA) | Uses NVIDIA CUDA cu12.4 automatically when available; falls back to CPU otherwise |
-| 🧠 Model | [MAEST](https://huggingface.co/mtg-upf/discogs-maest-10s-fs-129e): genre & subgenre classification (50+ styles) |
+| 🧠 Model | [MAEST](https://huggingface.co/mtg-upf/discogs-maest-10s-fs-129e): genre & subgenre classification (over 400 styles) |
 | 🌐 Web UI | Gradio-based — dark/light theme, file upload, charts, tag cloud |
 
 ---
