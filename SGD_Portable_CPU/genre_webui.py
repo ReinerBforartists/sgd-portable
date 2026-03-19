@@ -1075,7 +1075,7 @@ button[aria-label*="Settings"] {
 with gr.Blocks(title="SGD Portable", css=CSS) as app:
 
     # Footer
-    gr.HTML('<div style="position:fixed; bottom:0; left:0; width:100%; text-align:center; padding:8px; background:#1a1a2e; color:#a0a0b0; border-top:1px solid #2a2a4a; z-index:9999;">SGD Portable v1.0 — © 2026 by Reiner Prokein • made with ❤️ | MIT License</div>')
+    gr.HTML('<div style="position:fixed; bottom:0; left:0; width:100%; text-align:center; padding:8px; background:#1a1a2e; color:#a0a0b0; border-top:1px solid #2a2a4a; z-index:9999;">SGD Portable v1.0.1 — © 2026 by Reiner Prokein • made with ❤️ | MIT License</div>')
 
     logo_base64 = get_logo_base64()
 

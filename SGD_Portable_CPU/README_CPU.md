@@ -1,4 +1,4 @@
-# SGD Portable v 1.0
+# SGD Portable v 1.0.1
 
 🎧 A portable, self-contained web interface for music genre classification using MAEST.
 
