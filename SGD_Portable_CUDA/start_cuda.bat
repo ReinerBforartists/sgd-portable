@@ -55,20 +55,23 @@ echo [3/4] Installing packages (one-time setup)...
 echo.
 echo  Packages to download and install:
 echo.
-echo    torch (CPU)                ~120 MB   AI engine
-echo    transformers + deps        ~150 MB   MAEST model loader
-echo    librosa + soundfile + deps ~250 MB   audio processing
-echo    gradio + plotly + deps     ~650 MB   web interface and charts
+echo    torch (CUDA)               ~4.4 Gb   AI engine
+echo    transformers + deps        ~250 MB   MAEST model loader
+echo    librosa + audio + deps     ~120 MB   audio processing
+echo    gradio + plotly + deps     ~400 MB   web interface and charts
+echo    pip-intern                 ~480 MB   cache, metadata, bytecode
 echo.
-echo  Total: ~4.0 GB  (packages + MAEST model, downloaded once)
+echo  Total: ~6.0 GB  (packages + MAEST model ~350 MB, downloaded once)
+echo.
+echo  Please be patient, this can take a while.
 echo.
 
-echo [3a] Installing torch (CUDA 12.4, ~2.5 GB)...
+echo [3a] Installing torch (CUDA 12.4, ~4.4 GB)...
 "%PYTHON_EXE%" -m pip install --no-warn-script-location --target="%PYTHON_DIR%\Lib\site-packages" torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 >> install.log 2>&1
 if errorlevel 1 ( echo ERROR: torch failed. See install.log & pause & exit /b 1 )
 echo     torch OK
 
-echo [3b] Installing remaining packages (~1.0 GB)...
+echo [3b] Installing remaining packages (~800 Mb)...
 "%PYTHON_EXE%" -m pip install --no-warn-script-location --target="%PYTHON_DIR%\Lib\site-packages" transformers librosa soundfile numpy gradio plotly >> install.log 2>&1
 if errorlevel 1 ( echo ERROR: Package installation failed. See install.log & pause & exit /b 1 )
 echo     packages OK
