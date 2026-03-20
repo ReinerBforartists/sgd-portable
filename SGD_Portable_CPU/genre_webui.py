@@ -45,7 +45,7 @@ import librosa
 
 import base64
 
-# Füge das am Anfang der Datei ein (nach den anderen imports)
+# Add this at the beginning of the file (after the other imports).
 def get_logo_base64():
     logo_path = os.path.join(BASE_DIR, "sgdlogo.png")
     if os.path.exists(logo_path):
@@ -121,7 +121,7 @@ SUBSTYLE_OVERRIDE = {
     "Technical Death Metal": "Metal",
     "Melodic Death Metal": "Metal",
 
-    # ===== ROCK (ALLE ROCK-SUBGENRES) =====
+    # ===== ROCK (ALL ROCK-SUBGENRES) =====
     "Rock": "Rock",
     "Alternative Rock": "Rock",
     "Indie Rock": "Rock",
@@ -184,7 +184,7 @@ SUBSTYLE_OVERRIDE = {
     "Melodic Hardcore": "Rock",
     "Glam": "Rock",
     "Industrial Rock": "Rock",
-    "Industrial": "Rock",  # Auch in Electronic, aber hier als Rock
+    "Industrial": "Rock",  # double with Electronic, but here as Rock
     "Funk Metal": "Rock",
     "Rap Metal": "Rock",
 
@@ -198,7 +198,7 @@ SUBSTYLE_OVERRIDE = {
     "Darkwave": "Electronic",
     "Synth-pop": "Electronic",
     "Synthwave": "Electronic",
-    "New Wave Electronic": "Electronic",  # Für die Electronic-Version
+    "New Wave Electronic": "Electronic",
     "Coldwave Electronic": "Electronic",
     "Minimal": "Electronic",
     "Minimal Techno": "Electronic",
@@ -1250,7 +1250,6 @@ with gr.Blocks(title="SGD Portable", css=CSS) as app:
         inputs=[song_selector, top_n, dark_mode],
         outputs=[chart_upper, chart_sub],
     )
-
 
 
     app.load(
