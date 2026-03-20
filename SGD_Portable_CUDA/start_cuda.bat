@@ -48,6 +48,30 @@ if errorlevel 1 (
 del "%GETPIP%" 2>nul
 echo pip OK
 
+:cuda_check
+echo Checking for CUDA-capable GPU...
+"%PYTHON_EXE%" -c "import ctypes; ctypes.CDLL('nvcuda.dll')" >nul 2>&1
+if errorlevel 1 (
+    echo.
+    echo  ============================================================
+    echo   No NVIDIA CUDA GPU detected on this system.
+    echo  ============================================================
+    echo.
+    echo   This is the CUDA version of SGD Portable.
+    echo   It requires an NVIDIA graphics card with CUDA support.
+    echo.
+    echo   Please download the CPU version instead:
+    echo   It works on any PC, no GPU required.
+    echo.
+    echo   The CUDA version will NOT be installed.
+    echo  ============================================================
+    echo.
+    pause
+    exit /b 1
+)
+echo     CUDA GPU detected, continuing...
+echo.
+
 :packages_check
 if exist "%PACKAGES_OK%" goto model_check
 

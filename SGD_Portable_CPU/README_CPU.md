@@ -62,7 +62,7 @@ Full details in `THIRD_PARTY_LICENSES.md`.
 1. Download the appropriate ZIP:
    - **CUDA version**: `SGD_Portable_CUDA.zip` *(NVIDIA GPU with CUDA required)*
    - **CPU version**: `SGD_Portable_CPU.zip` *(works anywhere, slower)*
-> 💡 Note that the CUDA version runs in CPU mode in case it does not find a fitting CUDA version on the system.
+> 💡 Note that the CUDA version will not install on a pc without fitting cuda support. Please use the CPU version instead.
 
 2. Extract the folder.
 

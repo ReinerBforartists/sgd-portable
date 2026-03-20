@@ -619,9 +619,6 @@ def load_model():
     if pipe is not None:
         return
 
-    # 🔹 Recognize and explicitely set the device (GPU → 0, CPU → -1)
-    device = 0 if torch.cuda.is_available() else -1
-
     print("Loading MAEST model...")
     from transformers import pipeline as hf_pipeline
     import transformers
@@ -632,10 +629,10 @@ def load_model():
         model="mtg-upf/discogs-maest-10s-fs-129e",
         trust_remote_code=True,
         top_k=400,
-        device=device,
+        device=0,
     )
 
-    print(f"MAEST ready on {'GPU (CUDA)' if device == 0 else 'CPU'}.")
+    print(f"MAEST ready on GPU (CUDA).")
     print("CUDA available:", torch.cuda.is_available())
     print("Device name:", torch.cuda.get_device_name(0))
 
@@ -649,15 +646,11 @@ def get_device_label():
         if "AMD" in name or "Radeon" in name:
             return f"GPU · ROCm · {name}"
         return f"GPU · CUDA · {name}"
-    return "CPU"
+    return "GPU · CUDA · (not detected)"
 
 DEVICE_LABEL = get_device_label()
 
-if not torch.cuda.is_available():
-    print("WARNING: CUDA GPU not available — running on CPU.")
-    print("Make sure your GPU drivers support CUDA and are up to date.")
-else:
-    print(f"GPU detected: {torch.cuda.get_device_name(0)}")
+print(f"GPU detected: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'none'}")
 
 
 def classify_genre(audio_path):
