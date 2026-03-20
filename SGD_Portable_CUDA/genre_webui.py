@@ -685,7 +685,15 @@ def classify_genre(audio_path):
         results = pipe(segment, sampling_rate=SR)
         for r in results:
             all_scores[r['label']] = all_scores.get(r['label'], 0) + r['score']
-    style_scores = {k: v / n_segs for k, v in all_scores.items()}
+    style_scores_raw = {k: v / n_segs for k, v in all_scores.items()}
+
+    # Group same genres together. Ska is for exmample under rock and reggae.
+    aggregated = {}
+    for style, score in style_scores_raw.items():
+        clean = style.split("---")[-1] if "---" in style else style
+        aggregated[clean] = aggregated.get(clean, 0) + score
+    style_scores = aggregated
+
     upper_scores = {}
     for style, score in style_scores.items():
         upper = style_to_upper(style)
